@@ -1,0 +1,211 @@
+/**
+    * Author:wyl
+    * Create Time:2018-02-02 11:35
+    * Description:
+*/
+
+
+.content{
+    margin: 1.96rem 0 0.88rem;
+}
+.nav{
+    color:#9096A6;
+    font-size: 0.3rem;
+    background: #FFFFFF;
+    box-shadow: inset 0 0 0 0 #DFE0E5;
+    position: fixed;
+    top:0.88rem;
+}
+.nav li{
+    position: relative;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    float: left;
+    width: 33%;
+    text-align: center;
+    cursor: pointer;
+}
+.active{
+    color:#23252F;
+}
+.break{
+    position: absolute;
+    bottom: -0.14rem;
+    clear: both;
+    width:100%;
+}
+.break img{
+    display: none;
+    width: 0.9rem;
+    margin:0 auto
+}
+.active .break img{
+    display: block;
+}
+.goods-list{
+    width: 100%;
+    margin-top:0.2rem;
+    background: #ffffff;
+    color:#9096A6;
+    font-size: 0.24rem;
+}
+.goods-img{
+    float: left;
+    width:1.76rem;
+    height: 1.76rem;
+}
+.goods-img img{
+    display: block;
+    width: 100%;
+}
+.goods-dec{
+    float: right;
+    width:5rem;
+}
+.goods-item{
+    padding:0.3rem 0.3rem 0 0.3rem;
+}
+.goods-item:after,.goods-handle ul:after,.footer ul:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.goods-dec p{
+    line-height: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.goods-dec p:not(:first-child){
+    margin-top: 0.2rem;
+}
+.goods-dec>.title{
+    color:#23252F;
+    font-size: 0.3rem;
+
+
+}
+.goods-dec>.price{
+    color:#FF3B5E;
+
+
+}
+.goods-dec p:last-child{
+    margin-top: 0.16rem;
+}
+.goods-dec p span{
+    font-size: 0.24rem;
+    display: inline-block;
+    width: 50%;
+}
+.goods-handle{
+    margin-top: 0.3rem;
+    padding:0.2rem 0;
+    border-top:1px solid #DDDEE3 ;
+
+}
+
+.sale .goods-handle li{
+    line-height: 0.28rem;
+    height: 0.28rem;
+    font-size: 0.26rem;
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    cursor: pointer;
+}
+.goods-handle li:not(:last-child){
+    border-right: 1px solid #DDDEE3 ;
+}
+
+.goods-handle li span{
+    display: inline-block;
+    vertical-align: middle;
+    width:0.4rem;
+    height: 0.3rem;
+    margin-right: 0.12rem;
+}
+.preview span{
+    background: url("../img/preview@2x.png");
+    background-size: 0.4rem 0.3rem;
+}
+.copy span{
+    background: url("../img/Link Copy 2@2x.png");
+    background-size: 0.4rem 0.3rem;
+}
+.share span{
+    background: url("../img/share.png");
+    background-size: 0.4rem 0.3rem;
+}
+/*已下架*/
+.under li{
+    line-height: 0.28rem;
+    height: 0.28rem;
+    font-size: 0.26rem;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.position-img{
+    position: relative;
+}
+.position-img .under-icon{
+    position: absolute;
+    width: 1rem;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.undercarriage span{
+    margin-top:-0.08rem;
+    background: url("../img/arrow-up@2x.png") ;
+    background-size: 0.4rem 0.3rem;
+}
+
+
+/*category*/
+
+.category-list{
+    display: none;
+    right: -100%;
+    background: #fff;
+    position: relative;
+    padding:0.3rem 0;
+    border-bottom: 1px solid #DDDEE3;
+}
+.category-list p{
+    padding: 0 0.3rem;
+}
+.category-list p.category-title{
+    color:#23252F;
+    margin-bottom: 0.12rem;
+    line-height: 0.3rem;
+    font-size: 0.3rem;
+}
+.category-list p.category-profile{
+    font-size: 0.28rem;
+    color: #9096A6;
+    line-height: 0.3rem;
+}
+.category-tab{
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.category-tab li{
+    text-align: center;
+    line-height: 1.28rem;
+    float: left;
+    width: 1.48rem;
+    height: 1.28rem;
+    font-size: 0.32rem;
+    letter-spacing: 1px;
+    color:#fff;
+}
+.category-tab .edit{
+    background: #ACB3BF;
+}
+.category-tab .clear-away{
+    background: #FF3B5E ;
+}

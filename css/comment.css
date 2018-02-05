@@ -1,0 +1,141 @@
+/**
+    * Author:wyl
+    * Create Time:2018-02-01 14:44
+    * Description:
+*/
+* {
+    box-sizing: border-box;
+    /* 在X5新内核Blink中，在排版页面的时候，会主动对字体进行放大，会检测页面中的主字体，当某一块字体在我们的判定规则中，认为字号较小，并且是页面中的主要字体，就会采取主动放大的操作。然而这不是我们想要的，可以采取给最大高度解决 */
+    max-height: 100000px;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+    max-height: 100000px;
+}
+
+*, *:before, *:after {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th,textarea, td {
+    border: 0 none;
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+em, strong {
+    font-style: normal;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f2f2f2;
+    font-size: 0.24rem;
+}
+
+a {
+    text-decoration: none;
+}
+.box {
+    position: relative;
+    background: #f2f3f6;
+    max-width: 7.5rem;
+    margin: 0 auto;
+
+}
+/*header*/
+header{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width:100% ;
+    background: #fff;
+    padding:0 0.24rem 0 0.30rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    color: #2B3857;
+    font-size: 0.36rem;
+    box-shadow:0 2px 10px 0 rgba(100,150,255,0.15);
+}
+
+.header ul{
+
+    position: relative;
+}
+.back,.setting{
+    position: absolute;
+}
+.title{
+    text-align: center;
+}
+.back{
+    top:0;
+    left: 0.3rem;
+}
+.setting{
+    top:0;
+    right: 0.24rem;
+}
+.setting img{
+    width: 0.48rem;
+    vertical-align: middle;
+}
+.back img{
+    width:0.22rem ;
+    vertical-align: middle;
+}
+.content{
+    margin-top:0.88rem;
+}
+
+header,.nav{
+        width: 7.5rem;
+
+}
+
+
+/*footer*/
+.footer ul:after{
+    display: table;
+    content: '';
+    clear: both;
+}
+.footer{
+    width: 7.5rem;
+    height: 0.88rem;
+    text-align: center;
+    color:#fff;
+    position: fixed;
+    bottom: 0;
+    font-size: 0.32rem;
+    line-height: 0.88rem;
+}
+.footer a{
+    display: block;
+}
+.foot-l,.foot-r{
+    letter-spacing: 1px;
+    float: left;
+    width: 50%;
+}
+.foot-l{
+    background: #2B3857;
+}
+.foot-r{
+    background:#FF3B5E;
+}
+
