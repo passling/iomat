@@ -209,3 +209,70 @@
 .category-tab .clear-away{
     background: #FF3B5E ;
 }
+
+/*dialog*/
+
+.dialog{
+    display: none;
+    z-index: 999;
+    position: fixed;
+    width: 7.5rem;
+    height: 100%;
+    top:0;
+    background:  rgba(0,0,0,0.70);;
+}
+.dialog-box{
+    width: 5.4rem;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #ffffff;
+    border-radius: 0.1rem;
+}
+.dialog-title{
+    text-align: center;
+    font-size: 0.34rem;
+    color: #030303;
+    letter-spacing: 0;
+    line-height: 0.34rem;
+    padding:0.5rem 0.3rem 0.4rem 0.3rem;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #C7C7CD;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #C7C7CD;
+}
+
+input:-ms-input-placeholder{
+    color: #C7C7CD;
+}
+
+input::-webkit-input-placeholder{
+    color: #C7C7CD;
+}
+.category-name{
+    font-size: 0.26rem;
+    border: 1px solid #C7C7CD;
+    margin:0 0.3rem 0.3rem 0.3rem;
+    height: 0.48rem;
+    width: 4.8rem;
+    padding-left: 0.12rem;
+}
+.btn-dialog a{
+    box-sizing: border-box;
+    line-height: 0.88rem;
+    height: 0.88rem;
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    border-top:1px solid #DDDEE3;
+    color: #007AFF ;
+    font-size: 0.36rem;
+    letter-spacing: 1px;
+}
+.category-cancel{
+    border-right: 1px solid #DDDEE3;
+}
