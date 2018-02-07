@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/layout.js"></script>
+    <title>预览</title>
+    <link rel="stylesheet" href="css/comment.css">
+    <style>
+        .banner{
+            width: 100%;
+            position: relative;
+        }
+        .banner img{
+            display: block;
+            width: 100%;
+        }
+        .pay-icon {
+            display: inline-block;
+            padding-left: 0.34rem;
+            font-size: 0.20rem;
+            color: #9e9e9e;
+            background: url(img/pay-icon@2x.png) no-repeat left center;
+            background-size: 0.28rem 0.28rem;
+        }
+        .goods-profile{
+            padding: 0.3rem;
+            background: #fff;
+        }
+        .goods-title{
+            font-size: 0.3rem;
+            color:#23252F;
+            line-height: 0.3rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .height-light{
+            margin:0.2rem 0;
+            font-size: 0.4rem;
+            line-height: 0.4rem;
+            color: #FF3B5E ;
+        }
+        .goods-service{
+            color:#9096A6;
+            font-size: 0.24rem;
+            line-height: 0.26rem;
+        }
+        .goods-service:after,.pay-type:after,footer:after,.recommend-box:after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .goods-service li,.pay-type li{
+            float: left;
+            width: 33.3%;
+            text-align: center;
+        }
+        .goods-service li:first-child,.pay-type li:first-child{
+            text-align: left;
+        }
+        .goods-service li:last-child,.pay-type li:last-child{
+            text-align: right;
+        }
+        .pay-type {
+            width: 100%;
+            padding:0.3rem;
+            background: #F9F9F9;
+            border-top:1px solid #DDDEE3;
+            border-bottom:1px solid #DDDEE3;
+        }
+        .choose-box{
+            cursor: pointer;
+            margin:0.2rem 0;
+            padding:0 0.3rem;
+            color: #23252F;
+            font-size: 0.3rem;
+            line-height: 0.88rem;
+            height: 0.88rem;
+            position: relative;
+            background: #fff;
+        }
+        .choose-box span{
+            position: absolute;
+            display: inline-block;
+            width:0.12rem;
+            height: 0.2rem;
+            background: url("img/link-arrow@2x.png") no-repeat center;
+            background-size: 0.12rem 0.2rem;
+            top:50%;
+            margin-top:-0.06rem;
+            right: 0.3rem;
+
+        }
+
+        /*comment*/
+        .comment{
+            padding: 0.3rem;
+            background: #fff;
+        }
+        .comment-title{
+            color:#23252F;
+            font-size: 0.3rem;
+            line-height: 0.3rem;
+        }
+        .comment-detail{
+            padding: 0.4rem 0;
+        }
+        .comment-user{
+            vertical-align: middle;
+            margin-right: 0.2rem;
+            display: inline-block;
+            height: 0.64rem;
+            width: 0.64rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .comment-user img{
+            display: block;
+            width: 100%;
+        }
+        .commentator{
+            vertical-align: middle;
+            font-size: 0.26rem;
+            line-height: 0.64rem;
+            color: #23252F;
+            display: inline-block;
+        }
+        .comment-text{
+            font-size: 0.26rem;
+            color: #23252F;
+            line-height: 0.28rem;
+            margin-top:0.2rem;
+        }
+        .comment-goods{
+            font-size: 0.26rem;
+            color: #9096A6;
+            line-height: 0.28rem;
+            margin-top:0.14rem
+        }
+        .btn{
+            cursor: pointer;
+            display:inline-block;
+            border: 1px solid #FF3B5E  ;
+            color:#FF5A5F;
+            line-height: 0.24rem;
+            font-size: 0.24rem;
+            padding:0.1rem 0.2rem;
+            margin:0 auto;
+            border-radius: 3px;
+            text-align: center;
+        }
+        .detail-box p{
+            background: #fff;
+            line-height: 1.1rem;
+            height: 1.1rem;
+            text-align: center;
+        }
+
+        /*shop*/
+        .shop{
+
+            margin:0.2rem 0;
+            background: #fff;
+        }
+        .manager{
+            padding: 0.3rem ;
+        }
+        .manager-shortcut,.manager-name{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .manager-shortcut{
+            width: 0.88rem;
+            height: 0.88rem;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        .manager-shortcut img{
+            display: block;
+            width: 100%;
+        }
+        .manager-name{
+            font-size: 0.34rem;
+            line-height: 0.88rem;
+            color: #23252F;
+            margin-left: 0.3rem;
+        }
+        .shop-tab{
+            padding:0.3rem 0;
+            border:1px solid #DDDEE3;
+            text-align: center;
+        }
+        .shop-tab .btn:first-child{
+            margin-right:0.6rem;
+        }
+        .detail-box{
+            background: #ffffff;
+            padding-bottom: 0.4rem;
+        }
+        .detail-box img{
+            display: block;
+            width: 100%;
+        }
+        .recommend-title{
+            font-size: 0.28rem;
+            color: #9096A6;
+            line-height: 0.3rem;
+            padding: 0.3rem;
+            position: relative;
+            text-align: center;
+        }
+        .recommend-title img{
+            display: block;
+            position: absolute;
+            top:50%;
+            width: 2.8rem;
+            height: 0.02rem;
+        }
+        .recommend-title img:last-child{
+            right: 0.3rem;
+        }
+        .recommend-list{
+            margin-bottom: 0.1rem;
+            background: #fff;
+            width: 3.7rem;
+        }
+        .product-shortcut{
+            width: 100%;
+            height: 3.7rem;
+            overflow: hidden;
+        }
+        .product-shortcut img{
+            width: 100%;
+        }
+        .recommend-text{
+            padding:0.2rem 0 0.2rem 0.2rem;
+        }
+        .recommend-text p{
+            font-size: 0.28rem;
+            color: #23252F;
+            line-height: 0.3rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .recommend-text p:last-child{
+            margin-top: 0.14rem;
+            color: #FF3B5E;
+        }
+        .recommend-list:nth-child(odd){
+           float: left;
+        }
+        .recommend-list:nth-child(even){
+            float: right;
+        }
+
+
+        /*footer*/
+        footer{
+            background: #ffffff;
+            padding:0.06rem 0;
+        }
+        .footer-left,.footer-right{
+            width: 50%;
+            float: left;
+        }
+
+        .footer-left li{
+            float: left;
+            width: 33.3%;
+            text-align: center;
+        }
+        .footer-right li{
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="banner">
+            <img src="img/0.jpg" alt="">
+        </div>
+
+        <!--头部描述信息-->
+        <div class="goods-profile">
+            <p class="goods-title">2016新品正品高跟女鞋时尚新品女鞋</p>
+            <p class="height-light">&yen;30000.00</p>
+            <div class="goods-service">
+                <ul>
+                    <li>
+                        快递:&nbsp;0.0
+                    </li>
+                    <li>
+                        月销8笔
+                    </li>
+                    <li>
+                        香港
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--支付方式-->
+        <div class="pay-type">
+            <ul>
+                <li><span class="pay-icon">空间币支付</span></li>
+                <li><span  class="pay-icon">支付宝支付</span></li>
+                <li><span  class="pay-icon">微信支付</span></li>
+            </ul>
+        </div>
+
+
+        <!--选择商品属性-->
+        <div class="choose-box">
+            选择&nbsp;颜色&nbsp;款式分类
+            <span></span>
+        </div>
+
+        <!--评价模块-->
+        <div class="comment">
+            <div class="comment-title">宝贝评价(3)</div>
+            <div class="comment-detail">
+                <div>
+                    <div class="comment-user"><img src="img/user@2x.png" alt=""></div>
+                    <div class="commentator">买丢</div>
+                </div>
+                <p class="comment-text">鞋子还行</p>
+                <p class="comment-goods">颜色分类:浅蓝色;&nbsp;款式:39</p>
+            </div>
+
+            <a class="btn" href="javascript:void(0)">查看全部评价</a>
+        </div>
+
+        <!--店铺信息-->
+        <div class="shop">
+            <div class="manager">
+                <div class="manager-shortcut"><img src="img/manager@2x.png" alt=""></div>
+                <div class="manager-name">傅晓田</div>
+            </div>
+            <div class="shop-tab">
+                <a href="javascript:void(0)" class="btn">查看分类</a><!--
+                --><a href="javascript:void(0)" class="btn">进店看看</a>
+            </div>
+        </div>
+
+        <!--图文详情-->
+        <div class="detail-box">
+            <p>图文详情</p>
+            <div>
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!--相关推荐-->
+
+        <div class="recommend-box">
+            <div class="recommend-title">
+                相关推荐
+                <img src="img/Combined%20Shape@2x.png" alt="">
+                <img src="img/Combined%20Shape@2x.png" alt="">
+            </div>
+            <div class="recommend-product">
+                <ul>
+                    <li class="recommend-list">
+                        <a href="javascript:void(0)">
+                            <div class="product-shortcut">
+                                <img src="img/pro1.jpg" alt="">
+                            </div>
+                            <div class="recommend-text">
+                                <p>2016新品方根舒适女鞋</p>
+                                <p>&yen;2850</p>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="recommend-list">
+                        <a href="javascript:void(0)">
+                            <div class="product-shortcut">
+                                <img src="img/pro2.jpg" alt="">
+                            </div>
+                            <div class="recommend-text">
+                                <p>2016新品方根舒适女鞋</p>
+                                <p>&yen;2850</p>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="recommend-list">
+                        <a href="javascript:void(0)">
+                            <div class="product-shortcut">
+                                <img src="img/pro3.jpg" alt="">
+                            </div>
+                            <div class="recommend-text">
+                                <p>2016新品方根舒适女鞋</p>
+                                <p>&yen;2850</p>
+                            </div>
+                        </a>
+
+                    </li>
+                    <li class="recommend-list">
+                        <a href="javascript:void(0)">
+                            <div class="product-shortcut">
+                                <img src="img/pro4.jpg" alt="">
+                            </div>
+                            <div class="recommend-text">
+                                <p>2016新品方根舒适女鞋</p>
+                                <p>&yen;2850</p>
+                            </div>
+                        </a>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!--底部-->
+        <footer>
+           <div class="footer-left">
+               <ul>
+                   <li>
+                       <a href="javascript:void(0)">
+                           <img src="img/service@2x.png" alt="">
+                           <br>客服
+                       </a>
+                   </li>
+                   <li>
+                       <a href="javascript:void(0)">
+                           <img src="img/home@2x.png" alt="">
+                           <br>店铺
+                       </a>
+                   </li>
+                   <li>
+                       <a href="javascript:void(0)">
+                           <img src="img/star@2x.png" alt="">
+                           <br>收藏
+                       </a>
+                   </li>
+               </ul>
+           </div>
+           <div class="footer-right">
+               <ul>
+                   <li>加入购物车</li>
+                   <li>立即购买</li>
+               </ul>
+           </div>
+        </footer>
+    </div>
+</body>
+</html>
