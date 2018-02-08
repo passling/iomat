@@ -138,6 +138,9 @@
             line-height: 0.28rem;
             margin-top:0.14rem
         }
+        .btn-box{
+            text-align: center;
+        }
         .btn{
             cursor: pointer;
             display:inline-block;
@@ -259,7 +262,7 @@
         /*footer*/
         footer{
             background: #ffffff;
-            padding:0.06rem 0;
+
         }
         .footer-left,.footer-right{
             width: 50%;
@@ -267,14 +270,42 @@
         }
 
         .footer-left li{
+            padding:0.13rem 0;
             float: left;
             width: 33.3%;
             text-align: center;
         }
         .footer-right li{
+
             float: left;
             width: 50%;
             text-align: center;
+        }
+        footer img{
+            margin: 0 auto;
+            width:0.34rem;
+            display:block;
+        }
+        footer a{
+            display: block;
+        }
+        footer p{
+            font-size: 0.2rem;
+            color: #8E8E93;
+            line-height: 0.22rem;
+            margin-top:0.08rem;
+        }
+        .add-card,.buy{
+            line-height: 0.88rem;
+            font-size: 0.3rem;
+            color: #FFFFFF;
+        }
+        .add-card{
+            background: #2B3857;
+
+        }
+        .buy{
+            background: #FF3B5E;
         }
     </style>
 </head>
@@ -330,8 +361,10 @@
                 <p class="comment-text">鞋子还行</p>
                 <p class="comment-goods">颜色分类:浅蓝色;&nbsp;款式:39</p>
             </div>
+            <div class="btn-box">
+                <a class="btn" href="javascript:void(0)">查看全部评价</a>
+            </div>
 
-            <a class="btn" href="javascript:void(0)">查看全部评价</a>
         </div>
 
         <!--店铺信息-->
@@ -427,27 +460,27 @@
                    <li>
                        <a href="javascript:void(0)">
                            <img src="img/service@2x.png" alt="">
-                           <br>客服
+                           <p>客服</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:void(0)">
                            <img src="img/home@2x.png" alt="">
-                           <br>店铺
+                           <p>店铺</p>
                        </a>
                    </li>
                    <li>
                        <a href="javascript:void(0)">
                            <img src="img/star@2x.png" alt="">
-                           <br>收藏
+                           <p>收藏</p>
                        </a>
                    </li>
                </ul>
            </div>
            <div class="footer-right">
                <ul>
-                   <li>加入购物车</li>
-                   <li>立即购买</li>
+                   <li class="add-card">加入购物车</li>
+                   <li class="buy">立即购买</li>
                </ul>
            </div>
         </footer>
