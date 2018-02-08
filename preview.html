@@ -15,6 +15,19 @@
             display: block;
             width: 100%;
         }
+        .banner a{
+            display: block;
+            position: absolute;
+            width: 0.6rem;
+            height: 0.6rem;
+            top:0.6rem;
+        }
+        .return{
+            left: 0.3rem;
+        }
+        .banner a:last-child{
+            right: 0.3rem;
+        }
         .pay-icon {
             display: inline-block;
             padding-left: 0.34rem;
@@ -205,6 +218,11 @@
             display: block;
             width: 100%;
         }
+
+
+        .recommend-box{
+            padding-bottom: 0.88rem;
+        }
         .recommend-title{
             font-size: 0.28rem;
             color: #9096A6;
@@ -262,6 +280,10 @@
         /*footer*/
         footer{
             background: #ffffff;
+            position: fixed;
+            bottom: 0;
+            width: 7.5rem;
+
 
         }
         .footer-left,.footer-right{
@@ -313,6 +335,13 @@
     <div class="box">
         <div class="banner">
             <img src="img/0.jpg" alt="">
+
+            <a href="javascript:void(0)" onclick="history.go(-1)" class="return">
+                <img src="img/detail-return@2x.png" alt="">
+            </a>
+            <a href="javascript:void(0)">
+                <img src="img/car@2x.png" alt="">
+            </a>
         </div>
 
         <!--头部描述信息-->
