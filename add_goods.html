@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/layout.js"></script>
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/preview.css">
+    <title>添加商品</title>
+    <style>
+        /*header*/
+        header .complete{
+            font-size: 0.32rem;
+        }
+        .edit-box{
+            padding:0.3rem 0.3rem 0.3rem 0.3rem;
+            background: #ffffff;
+            position: relative;
+        }
+        .goods-dec-edit{
+            font-size: 0.3rem;
+            line-height: 0.4rem;
+            width: 100%;
+            height: 1.2rem;
+            margin-bottom:0.22rem;
+        }
+        textarea::-webkit-input-placeholder,input::-webkit-input-placeholder{
+            color: #95989F;
+        }
+        .banner-box li{
+            position: relative;
+            float: left;
+            width: 1.6rem;
+            height: 1.6rem;
+            overflow: hidden;
+            background: url("img/add-img@2x.png") no-repeat;
+            background-size: cover;
+            margin-right: 0.16rem;
+        }
+        .banner-box:after,.attr-edit:after,ul:after{
+            display: table;
+            content: '';
+            clear: both;
+        }
+        .banner-box input[type='file']{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+
+        }
+        .delete-icon{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0.32rem;
+        }
+        .banner-box img:not(.delete-icon){
+            width: 100%;
+        }
+        .limit-box {
+            position: absolute;
+            right: 0.3rem;
+            bottom: 0.1rem;
+            font-size: 0.28rem;
+            color: #9096A6;
+            letter-spacing: 0;
+            line-height: 0.3rem;
+        }
+
+        /*属性*/
+        .attr-edit{
+            margin-top: 0.2rem;
+            padding-left: 0.3rem;
+            background: #ffffff;
+            position: relative;
+        }
+        .attr-edit>ul>li{
+            position: relative;
+            border-bottom: 1px solid #DDDEE3;
+            padding:0.3rem 0.3rem 0.3rem 0;
+            font-size: 0.3rem;
+            color: #95989F;
+            line-height: 0.3rem;
+            width: 5.98rem;
+            border-right: 1px solid #DDDEE3;
+        }
+        .attr-edit>ul>li:last-child{
+            border-bottom: none;
+        }
+        .attr-edit li input{
+            font-size: 0.3rem;
+            width: 2.16rem;
+            border: none;
+            outline: none;
+            float: right;
+        }
+        .attr-goods{
+            position: absolute;
+            right: 0.3rem;
+            top:50%;
+            margin-top:-0.32rem;
+
+        }
+        .goods-shortcut{
+            position: relative;
+            float: left;
+            width: 0.64rem;
+            height: 0.64rem;
+            overflow: hidden;
+            background: url("img/add-80.png") no-repeat center;
+            background-size: 0.64rem 0.64rem;
+            margin-left: 0.16rem;
+        }
+        .attr-edit input[type=file]{
+            width: 0.64rem;
+            height: 0.64rem;
+            position: absolute;
+            top:0;
+            left: 0;
+            opacity: 0;
+        }
+        .goods-shortcut img{
+            width: 100%;
+            display: block;
+        }
+        .delete-attr{
+            position: absolute;
+            right: 0.36rem;
+            top:50%;
+            margin-top: -0.25rem;
+            width: 0.5rem;
+        }
+        .add-attr{
+            border-top:1px solid #DDDEE3;
+            background: #ffffff;
+            padding: 0.3rem 0.3rem 0.3rem 0.96rem;
+            position: relative;
+            font-size: 0.3rem;
+            color: #23252F;
+            line-height: 0.3rem;
+        }
+        .add-attr span{
+            position: absolute;
+            left: 0.3rem;
+            top:50%;
+            margin-top: -0.23rem;
+            display: inline-block;
+            width: 0.46rem;
+            height: 0.46rem;
+            background: url("img/add-attr@2x.png") no-repeat center;
+            background-size: 0.46rem 0.46rem;
+        }
+        /*包邮*/
+        .detail-list{
+            padding:0.3rem;
+            background: #ffffff;
+            font-size: 0.3rem;
+            color: #23252F;
+            line-height: 0.3rem;
+            margin-top: 0.2rem;
+        }
+        .detail-list img{
+            float: right;
+            width: 0.26rem;
+            margin-top:0.05rem;
+        }
+        .postage-exclude-box{
+            padding-left:0.3rem;
+            background: #F9F9F9;
+        }
+        .postage-exclude{
+            border-top: 1px solid #DDDEE3;
+            border-bottom: 1px solid #DDDEE3;
+
+            color: #23252F;
+        }
+        .postage-title{
+            padding-top:0.2rem;
+            font-size: 0.3rem;
+            color: #23252F;
+            line-height: 0.46rem;
+        }
+        .postage-title span{
+            width: 0.46rem;
+            height: 0.46rem;
+            display: inline-block;
+            padding-left: 0.76rem;
+            background: url("img/check-box@2x.png") no-repeat center;
+            background-size: 0.46rem 0.46rem;
+            vertical-align: middle;
+        }
+        .postage-exclude-area{
+            padding-left: 0.76rem;
+            font-size: 0.24rem;
+            color: #23252F;
+            line-height: 0.28rem;
+            padding-bottom: 0.28rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <header>
+            <ul>
+                <li class="back">
+                    <a href="javascript:void(0)"><img src="img/back@2x.png" alt=""></a>
+                </li>
+                <li class="title">
+                    添加商品
+                </li>
+                <li class="setting complete">
+                    完成
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+
+            <!--文案编辑-->
+            <div class="edit-box">
+                <textarea class="goods-dec-edit" id="" maxlength="35"  name="" placeholder="请输入商品描述"></textarea>
+                <div class="banner-box">
+                    <ul>
+                        <li>
+                            <input type="file" name="banner[]">
+                            <!--<img src="img/1.jpg" alt="">-->
+                            <!--<img src="img/delete-banner@2x.png" alt="" class="delete-icon">-->
+                        </li>
+                    </ul>
+                </div>
+                <div class="limit-box">0/<span class="limit">35</span></div>
+            </div>
+
+            <!--属性编辑-->
+            <div class="attr-box">
+                <div class="attr-edit">
+                    <ul>
+                        <li>
+                            <span>颜色</span>
+                            <input type="text" name="size" placeholder="请输入商品颜色">
+                        </li>
+                        <li>
+                            <span>类型</span>
+                            <input type="text" name="type" placeholder="请输入商品类型">
+                        </li>
+                        <li>
+                            <span>价格</span>
+                            <input type="text" name="price" placeholder="请输入商品价格">
+                        </li>
+                        <li>
+                            <span>库存</span>
+                            <input type="text" name="size" placeholder="请输入商品库存">
+                        </li>
+                        <li>
+                            <span>图片</span>
+                            <div  class="attr-goods">
+                                <ul>
+                                    <li  class="goods-shortcut">
+                                        <input type="file" name=attr[]">
+                                        <!--<img src="img/1.jpg" alt="">-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <img src="img/detele-red@2x.png" alt="" class="delete-attr">
+                </div>
+                <div class="add-attr">
+                    <span></span>添加颜色/类型
+                </div>
+            </div>
+
+            <!--包邮-->
+            <div class="postage">
+                <div class="detail-list">
+                    包邮
+                    <img src="img/single-check@2x.png" alt="">
+                </div>
+                <div class="postage-exclude-box">
+                    <div class="postage-exclude">
+                        <div class="postage-title"><span></span>偏远地区不包邮</div>
+                        <div class="postage-exclude-area">海外,&nbsp;港澳台,&nbsp;新疆,&nbsp;西藏,&nbsp;内蒙古</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
