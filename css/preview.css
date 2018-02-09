@@ -32,7 +32,7 @@
     padding-left: 0.34rem;
     font-size: 0.20rem;
     color: #9e9e9e;
-    background: url(img/pay-icon@2x.png) no-repeat left center;
+    background: url(../img/pay-icon@2x.png) no-repeat left center;
     background-size: 0.28rem 0.28rem;
 }
 .goods-profile{
@@ -58,7 +58,7 @@
     font-size: 0.24rem;
     line-height: 0.26rem;
 }
-.goods-service:after,.pay-type:after,footer:after,.recommend-box:after{
+.goods-service:after,.pay-type:after,footer:after,.recommend-box:after,.attr-item:after{
     display: table;
     content: '';
     clear: both;
@@ -97,7 +97,7 @@
     display: inline-block;
     width:0.12rem;
     height: 0.2rem;
-    background: url("img/link-arrow@2x.png") no-repeat center;
+    background: url("../img/link-arrow@2x.png") no-repeat center;
     background-size: 0.12rem 0.2rem;
     top:50%;
     margin-top:-0.06rem;

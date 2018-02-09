@@ -8,8 +8,148 @@
     <link rel="stylesheet" href="css/comment.css">
     <link rel="stylesheet" href="css/preview.css">
     <style>
+        /*choose-goods*/
 
+        .mask{
+            width: 7.5rem;
+            height: 100%;
+            position: fixed;
+            background: rgba(0,0,0,0.70);
+            top:0;
+            z-index: 12;
+            /*display: none;*/
+        }
 
+        .choose-detail{
+            overflow: hidden;
+            background: #fff;
+            position: absolute;
+            transition: bottom ease 0.3s;
+            bottom: 0;
+
+        }
+        .choose-goods{
+            padding:0.3rem;
+            margin-bottom: 1.1rem;
+
+        }
+        .goods-dec{
+            width: 6.9rem;
+            padding-bottom: 0.3rem;
+            overflow: hidden;
+            border-bottom: 1px solid #DDDEE3;
+        }
+        .goods-l,.goods-r{
+            float: left;
+        }
+        .goods-l{
+            margin-right: 0.2rem;
+            width:1.3rem;
+            height: 1.3rem;
+            overflow: hidden;
+        }
+        .goods-l img{
+            display: block;
+            width: 100%;
+
+        }
+        .goods-r{
+
+            width: 5.4rem;
+            overflow: hidden;
+        }
+        .goods-r p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 0.28rem;
+            color: #23252F;
+            line-height: 0.3rem;
+        }
+        .goods-r p.goods-price{
+            font-size: 0.32rem;
+            color: #FF3B5E;
+        }
+        .stock{
+            padding:0.2rem 0;
+        }
+        .attr-list{
+            position: relative;
+            padding:0.3rem 0;
+            border-bottom:1px solid #DDDEE3;
+        }
+        .attr-list:last-child{
+
+        }
+        .attr{
+            font-size: 0.28rem;
+            color: #23252F;
+            line-height: 0.3rem;
+
+        }
+        .attr-item li{
+            float:left;
+            border: 1px solid #DDDEE3;
+            font-size: 0.24rem;
+            line-height: 0.24rem;
+            padding:0.08rem 0.26rem;
+            margin-right: 0.2rem;
+            margin-top: 0.2rem;
+            border-radius: 0.04rem;
+        }
+        .quantity{
+            position: absolute;
+            top: 0.24rem;
+            right: 0;
+        }
+        .quantity a{
+            display: block;
+            float: left;
+            width: 0.44rem;
+            height: 0.44rem;
+            border: 1px solid #DDDEE3;
+        }
+        .add{
+            background: url("img/add@2x.png") no-repeat center;
+            background-size: 0.2rem 0.2rem;
+        }
+        .minus{
+            background: url("img/minus@2x.png") no-repeat center;
+            background-size: 0.2rem 0.04rem;
+        }
+
+       
+        .num{
+            width: 0.6rem;
+            height: 0.44rem;
+            font-size: 0.24rem;
+            float: left;
+            border: 1px solid #DDDEE3;
+            text-align: center;
+        }
+        /*tba底部*/
+        .tab{
+            width: 7.5rem;
+            overflow: hidden;
+            /*position: fixed;*/
+            /*bottom: 0;*/
+            /*display: none;*/
+        }
+        .tab li{
+            float: left;
+            width: 50%;
+            font-size: 0.32rem;
+            color: #FFFFFF;
+            line-height: 0.32rem;
+            padding:0.28rem 0;
+            text-align: center;
+        }
+        .mask-add-card{
+            background: #2B3857;
+        }
+        .mask-buy{
+            background: #FF3B5E;
+        }
     </style>
 </head>
 <body>
@@ -164,18 +304,68 @@
 
 
         <!--选择商品-->
-        <div class="choose-goods">
-            <div class="goods-dec">
-                <div class="goods-l">
-                    <img src="" alt="">
+        <div class="mask">
+            <div class="choose-detail">
+                <div class="choose-goods">
+                    <div class="goods-dec">
+                        <div class="goods-l">
+                            <img src="img/0.jpg" alt="">
+                        </div>
+                        <div class="goods-r">
+                            <p class="goods-price">&yen;3000</p>
+                            <p class="stock">&yen;库存10件</p>
+                            <p>选择&nbsp;颜色&nbsp;款式&nbsp;分类</p>
+                        </div>
+                    </div>
+
+                    <div class="goods-attr-choose">
+                        <ul>
+                            <!--尺码-->
+                            <li class="attr-list">
+                                <div class="attr">尺码</div>
+                                <div class="attr-item">
+                                    <ul>
+                                        <li>34</li>
+                                        <li>35</li>
+                                        <li>36</li>
+                                        <li>37</li>
+                                        <li>38</li>
+                                        <li>39</li>
+                                        <li>40</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--颜色-->
+                            <li class="attr-list">
+                                <div class="attr">颜色分类</div>
+                                <div class="attr-item">
+                                    <ul>
+                                        <li>杏粉色</li>
+                                        <li>象牙白</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--购买数量-->
+                            <li class="attr-list">
+                                <div class="attr">购买数量</div>
+                                <div class="quantity">
+                                    <a href="javascript:void(0)" class="add"></a>
+                                    <input type="text" readonly value="1" class="num">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="goods-r">
-                    <p>&yen;3000</p>
-                    <p>&yen;库存10件</p>
-                    <p>选择&nbsp;颜色&nbsp;款式&nbsp;分类</p>
+                <div class="tab">
+                    <ul>
+                        <li class="mask-add-card">加入购物车</li>
+                        <li class="mask-buy">立即购买</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
 
         <!--底部-->
         <footer>
